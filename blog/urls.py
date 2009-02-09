@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 from django.views.generic import date_based
 
 from models import Entry
+from feeds import LatestEntriesFeed
 
 entry_dict = {
     'queryset': Entry.objects.all(),
@@ -18,3 +19,11 @@ urlpatterns = patterns('',
     
 urlpatterns += patterns('', 
     (r'^comments/', include('django.contrib.comments.urls')))
+
+feeds = {
+    'latest': LatestEntriesFeed,
+}
+
+urlpatterns += patterns('',
+   url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
+   )
