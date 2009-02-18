@@ -2,6 +2,7 @@
 docutils
 markdown>=1.7
 smartypants>=1.6.0.2
+south
 -e svn+http://django-tagging.googlecode.com/svn/trunk#egg=tagging
 -e svn+http://django-template-utils.googlecode.com/svn/trunk#egg=template_utils
 -e svn+http://typogrify.googlecode.com/svn/trunk#egg=typogrify
