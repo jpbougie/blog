@@ -48,8 +48,8 @@ class Entry(models.Model):
     
     tags = TagField()
     
-    published = managers.PublishedManager()
     objects = models.Manager()
+    published = managers.PublishedManager()
     
     class Meta:
         get_latest_by = 'pub_date'
